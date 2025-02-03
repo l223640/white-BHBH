@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>我的第一个网页</title>
+    <style>
+      /* 添加全局动画效果 */
+      body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh; /* 确保动画覆盖整个视口高度 */
+        background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+        background-size: 400% 400%; /* 扩大背景尺寸以支持动画 */
+        animation: gradientBG 10s ease infinite; /* 循环动画 */
+      }
+
+      /* 定义背景渐变动画 */
+      @keyframes gradientBG {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      /* 保持音频播放器在右上角 */
+      #audio-container {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 1000;
+      }
+
+      /* 内容样式（确保内容在动画上方） */
+      h1,
+      p {
+        position: relative;
+        z-index: 1;
+        color: white;
+        text-align: center;
+        padding: 20px;
+      }
+      /* 将音频播放器定位到右上角 */
+      #audio-container {
+        position: fixed; /* 固定定位 */
+        top: 10px; /* 距离顶部 10px */
+        right: 10px; /* 距离右侧 10px */
+        z-index: 1000; /* 确保音频播放器在最上层 */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>欢迎来到我的第一个网页！</h1>
+    <p>这是一个简单的网页示例。</p>
+
+    <!-- 音频播放器 -->
+    <div id="audio-container">
+      <audio controls>
+        <source
+          src="C:\Users\李国峰\Music\Adam Lambert - Whataya Want from Me (V0).mp3"
+          type="audio/mpeg"
+        />
+      </audio>
+    </div>
+  </body>
+</html>
